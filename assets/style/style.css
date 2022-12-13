@@ -1,81 +1,160 @@
 /* Basic style */
 :root {
-  --primary: #fff;
-  --secondary: #050840;
-  --highlight-primary: #7ce7c9;
-  --highlight-secondary: #9d7beb;
-  --radius: 0.5rem;
-  --pill: 2rem;
-  --line: 0.1rem;
+	--primary: #fff;
+	--secondary: #050840;
+	--highlight-primary: #7ce7c9;
+	--highlight-secondary: #9d7beb;
+	--radius: 0.5rem;
+	--pill: 2rem;
+	--line: 0.1rem;
+	--gradient: linear-gradient(#020024, #00d4ff);
 }
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 body {
-  margin: 2rem;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 2rem;
-  background: var(--secondary);
+	margin: 2rem;
+	padding: 0;
+	font-family: "Open Sans", sans-serif;
+	font-size: 2rem;
+	background: var(--secondary);
+	height: 100vh;
 }
 section {
-  max-width: 90vw;
+	max-width: 90vw;
+	display: flex;
+	flex-wrap: wrap;
 }
 a {
-  display: inline-block;
-  margin: 0.2em;
-  padding: 0.4em 0.8em;
-  background: var(--secondary);
-  color: var(--highlight-primary);
-  border: var(--line) solid var(--highlight-primary);
-  border-radius: var(--pill);
-  font-weight: normal;
-  text-decoration: none;
+	display: inline-block;
+	margin: 0.2em;
+	padding: 0.4em 0.8em;
+	background: var(--secondary);
+	color: var(--highlight-primary);
+	border: var(--line) solid var(--highlight-primary);
+	border-radius: var(--pill);
+	font-weight: normal;
+	text-decoration: none;
 }
 a:hover {
-  color: var(--primary);
-  border-color: var(--primary);
+	color: var(--primary);
+	border-color: var(--primary);
 }
 
 /* UI Event Classes */
 
 /* Jump animation on the interaction link */
 a:nth-of-type(12) {
-  position: relative;
-  background: var(--highlight-secondary);
-  color: var(--secondary);
-  border-color: var(--secondary);
+	position: relative;
+	background: var(--highlight-secondary);
+	color: var(--secondary);
+	border-color: var(--secondary);
 }
 
 .jump {
-  animation-name: jump;
-  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
-  animation-duration: 1.2s;
-  animation-iteration-count: 1;
+	animation-name: jump;
+	animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+	animation-duration: 1.2s;
+	animation-iteration-count: 1;
 }
 
 @keyframes jump {
-  0% {
-    transform: scale(1, 1) translateY(0);
-  }
-  10% {
-    transform: scale(1.1, 0.9) translateY(0);
-  }
-  30% {
-    transform: scale(0.9, 1.1) translateY(-5rem) rotate(10deg);
-  }
-  50% {
-    transform: scale(1.05, 0.95) translateY(0);
-  }
-  57% {
-    transform: scale(1, 1) translateY(-0.5rem) rotate(-2deg);
-  }
-  64% {
-    transform: scale(1, 1) translateY(0);
-  }
-  100% {
-    transform: scale(1, 1) translateY(0);
-  }
+	0% {
+		transform: scale(1, 1) translateY(0);
+	}
+	10% {
+		transform: scale(1.1, 0.9) translateY(0);
+	}
+	30% {
+		transform: scale(0.9, 1.1) translateY(-5rem) rotate(10deg);
+	}
+	50% {
+		transform: scale(1.05, 0.95) translateY(0);
+	}
+	57% {
+		transform: scale(1, 1) translateY(-0.5rem) rotate(-2deg);
+	}
+	64% {
+		transform: scale(1, 1) translateY(0);
+	}
+	100% {
+		transform: scale(1, 1) translateY(0);
+	}
 }
 
 /* Jouw animaties */
+
+/* achtergrond veranderen */
+
+.kleurtje {
+	background: var(--gradient);
+}
+
+.geenkleurtje {
+	background: none;
+	color: white;
+	border: none;
+}
+
+/* order shuffelen */
+
+.omdraaien {
+	flex-direction: row-reverse;
+}
+
+/* beneden vallen */
+
+.down {
+	animation-name: down;
+	animation-duration: 10s;
+	animation-iteration-count: 1;
+}
+
+@keyframes down {
+	0% {
+		transform: scale(1, 1) translateY(0);
+	}
+	10% {
+		transform: scale(0.8, 1.5) translateY(0);
+	}
+	30% {
+		transform: scale(1.5, 0.8) translateY(95vh);
+	}
+	50% {
+		transform: scale(0.8, 1.5) translateY(-10px);
+	}
+	57% {
+		transform: scale(1, 1) translateY(10px);
+	}
+	100% {
+		transform: scale(1, 1) translateY(0);
+	}
+}
+
+/* groeien */
+
+.grow {
+	animation-name: grow;
+	animation-duration: 10s;
+	animation-iteration-count: 1;
+	z-index: 1;
+}
+
+@keyframes grow {
+	0% {
+		transform: scale(1, 1);
+	}
+	50% {
+		transform: scale(4, 4) translateY(3rem);
+	}
+	100% {
+		transform: scale(1, 1);
+	}
+}
+
+/* muis weg */
+
+.left {
+	background-color: red;
+	color: white;
+}
