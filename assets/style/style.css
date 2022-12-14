@@ -87,7 +87,7 @@ a:nth-of-type(12) {
 /* achtergrond veranderen */
 
 .kleurtje {
-	background: var(--gradient);
+	--secondary: linear-gradient(#020024, #00d4ff);
 }
 
 .geenkleurtje {
@@ -157,4 +157,179 @@ a:nth-of-type(12) {
 .left {
 	background-color: red;
 	color: white;
+}
+
+/* springen */
+
+.dbjump {
+	animation-name: dbjump;
+	animation-duration: 5s;
+	animation-iteration-count: 1;
+	z-index: 1;
+}
+
+@keyframes dbjump {
+	0% {
+		transform: scale(1, 1) translateY(0);
+	}
+	5% {
+		transform: scale(1.1, 0.9) translateY(0);
+	}
+	15% {
+		transform: scale(0.9, 1.1) translateY(-5rem) rotate(10deg);
+	}
+	25% {
+		transform: scale(1.05, 0.95) translateY(0);
+	}
+	29% {
+		transform: scale(1, 1) translateY(-0.5rem) rotate(-2deg);
+	}
+	32% {
+		transform: scale(1, 1) translateY(0);
+	}
+
+	37% {
+		transform: scale(1.1, 0.9) translateY(0);
+	}
+
+	47% {
+		transform: scale(0.9, 1.1) translateY(-5rem) rotate(10deg);
+	}
+	67% {
+		transform: scale(1.05, 0.95) translateY(0);
+	}
+	71% {
+		transform: scale(1, 1) translateY(-0.5rem) rotate(-2deg);
+	}
+	74% {
+		transform: scale(1, 1) translateY(0);
+	}
+	100% {
+		transform: scale(1, 1) translateY(0);
+	}
+	100% {
+		transform: scale(1, 1) translateY(0);
+	}
+}
+
+/* wiggle */
+
+.wiggle {
+	animation: wiggle 2s linear;
+}
+
+@keyframes wiggle {
+	0%,
+	7% {
+		transform: rotateZ(0);
+	}
+	15% {
+		transform: rotateZ(-15deg);
+	}
+	20% {
+		transform: rotateZ(10deg);
+	}
+	25% {
+		transform: rotateZ(-10deg);
+	}
+	30% {
+		transform: rotateZ(6deg);
+	}
+	35% {
+		transform: rotateZ(-4deg);
+	}
+	40%,
+	100% {
+		transform: rotateZ(0);
+	}
+}
+
+/* vallen */
+
+.vallen {
+	animation-name: vallen;
+	animation-duration: 3s;
+}
+
+@keyframes vallen {
+	0% {
+		transform: translateY(80vh);
+	}
+
+	100% {
+		transform: translateY(10vh);
+	}
+}
+
+/* schudden */
+
+.shake {
+	animation-name: shake;
+	animation-duration: 3s;
+}
+
+@keyframes shake {
+	0% {
+		transform: translateX(-1rem);
+	}
+	5% {
+		transform: translateX(1rem);
+	}
+	10% {
+		transform: translateX(-1rem);
+	}
+	15% {
+		transform: translateX(1rem);
+	}
+	20% {
+		transform: translateX(-1rem);
+	}
+	25% {
+		transform: translateX(1rem);
+	}
+	30% {
+		transform: translateX(-1rem);
+	}
+	35% {
+		transform: translateX(1rem);
+	}
+	40% {
+		transform: translateX(-1rem);
+	}
+	45% {
+		transform: translateX(1rem);
+	}
+	50& {
+		transform: translateX(-1rem);
+	}
+	55% {
+		transform: translateX(1rem);
+	}
+	60& {
+		transform: translateX(-1rem);
+	}
+	65% {
+		transform: translateX(1rem);
+	}
+	70& {
+		transform: translateX(-1rem);
+	}
+	75% {
+		transform: translateX(1rem);
+	}
+	80& {
+		transform: translateX(-1rem);
+	}
+	85% {
+		transform: translateX(1rem);
+	}
+	90% {
+		transform: translateX(-1rem);
+	}
+	95% {
+		transform: translateX(1rem);
+	}
+	100% {
+		transform: translateX(0);
+	}
 }
